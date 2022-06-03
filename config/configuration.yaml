@@ -1,0 +1,64 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+frontend:
+  themes: !include_dir_merge_named themes
+# Text to speech
+tts:
+  - platform: google_translate
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+
+mqtt:   
+  broker: 101.132.164.244
+  port: 1883 
+  client_id: mqttjs_2c93e61a7e
+  keepalive: 60
+  sensor:
+    - state_topic: "mqtt_temp_topic"
+  button:
+    command_topic: "mqtt_button_topic"
+  cover:
+    - name: mqtt_cover
+      command_topic: "mqtt_cover_topic"
+    - name: mqtt_cover1
+      command_topic: "mqtt_cover1_topic"
+light:
+  - platform: mqtt 
+    name: mqtt_light
+    state_topic: "mqtt_light_topic"
+    command_topic: "mqtt_light_topic"
+    payload_on: "on"
+    payload_off: "off"
+  - platform: mqtt 
+    name: mqtt_light2
+    state_topic: "mqtt_light2_topic"
+    command_topic: "mqtt_light2_topic"
+    payload_on: "on"
+    payload_off: "off"
+  - platform: mqtt 
+    name: mqtt_light3
+    state_topic: "mqtt_light3_topic"
+    command_topic: "mqtt_light3_topic"
+    payload_on: "on"
+    payload_off: "off"
+  - platform: mqtt 
+    name: mqtt_light4
+    state_topic: "mqtt_light4_topic"
+    command_topic: "mqtt_light4_topic"
+    payload_on: "on"
+    payload_off: "off"
+  - platform: mqtt 
+    name: mqtt_light5
+    state_topic: "mqtt_light5_topic"
+    command_topic: "mqtt_light5_topic"
+    payload_on: "on"
+    payload_off: "off"
+  - platform: mqtt 
+    name: mqtt_light6
+    state_topic: "mqtt_light6_topic"
+    command_topic: "mqtt_light6_topic"
+    payload_on: "on"
+    payload_off: "off"
